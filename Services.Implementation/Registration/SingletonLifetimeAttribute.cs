@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Services.Implementation.Registration
 {
-    internal class SingletonLifetimeAttribute
+    [AttributeUsage(AttributeTargets.Class)]
+    class SingletonLifeTimeAttribute : Attribute
     {
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    class LifeTimeAttribute : Attribute
+    {
+        public ServiceLifetime LifetimeMode { get; set; }
     }
 }

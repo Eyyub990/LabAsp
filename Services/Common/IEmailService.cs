@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services.Common
+﻿namespace Services.Common
 {
-    internal class IEmailService
+    public interface IEmailService
     {
+        Task SendEmail(string to, string subject, string body);
     }
 }

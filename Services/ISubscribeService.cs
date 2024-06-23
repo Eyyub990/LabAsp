@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services
+﻿namespace Services
 {
-    internal class ISubscribeService
+    public interface ISubscribeService
     {
+        Task<Tuple<bool, string>> Subscribe(string email);
+        Task<Tuple<bool, string>> SubscribeApprove(string token);
     }
 }

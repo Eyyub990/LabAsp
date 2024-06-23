@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services
+﻿namespace Services
 {
-    internal class IContactPostService
+    public interface IContactPostService
     {
+        Task<string> Add(string fullName, string email, string message);
     }
 }

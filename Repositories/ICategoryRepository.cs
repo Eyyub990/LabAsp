@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Repositories.Common;
 
 namespace Repositories
 {
-    internal class ICategoryRepository
+    public interface ICategoryRepository : IAsyncRepository<Category>
     {
     }
 }

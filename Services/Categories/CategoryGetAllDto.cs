@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services.Categories
+﻿namespace Services.Categories
 {
-    internal class CategoryGetAllDto
+    public class CategoryGetAllDto
     {
+        public int Id { get; set; }
+        public required string Name { get; set; }
     }
 }
