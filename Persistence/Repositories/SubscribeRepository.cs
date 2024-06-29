@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Repositories;
+using Repositories.Common;
 
 namespace Persistence.Repositories
 {
-    internal class SubscribeRepository
+    public class SubscribeRepository : AsyncRepository<Subscribe>, ISubscriberRepository
     {
+        public SubscribeRepository(DbContext db)
+            :base(db)
+        {
+            
+        }
     }
 }

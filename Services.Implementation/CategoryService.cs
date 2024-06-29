@@ -7,7 +7,7 @@ namespace Services.Implementation
 {
     public class CategoryService(ICategoryRepository categoryRepository) : ICategoryService
     {
-        public async Task<AddCategoryResponseDto> AddCategoryAsync(AddCategoryRequestDto model, CancellationToken cancellationToken = default)
+        public async Task<AddCategoryResponseDto> AddAsync(AddCategoryRequestDto model, CancellationToken cancellationToken = default)
         {
             var entity = new Category { Name = model.Name };
 

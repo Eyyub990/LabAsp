@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Autofac;
+using Microsoft.EntityFrameworkCore;
+using Persistence.Contexts;
 
 namespace Persistence
 {
-    internal class PersistenceRegisterModule
+    public class PersistenceRegisterModule : Autofac.Module
     {
+        protected override void Load(ContainerBuilder builder)
+        {
+                base.Load(builder);
+
+            builder.RegisterAssemblyTypes(this.GetType().Assembly)
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<DataContext>()
+                .As<DbContext>()
+                .InstancePerLifetimeScope();
+
+        }
     }
 }

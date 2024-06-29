@@ -1,0 +1,10 @@
+﻿@model AddCategoryRequestDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post">
+    <input asp-for="Name" />
+    <a class="btn btn-warning" asp-action="index">Back</a>
+    <button class="btn btn-success">Save</button>
+</form>

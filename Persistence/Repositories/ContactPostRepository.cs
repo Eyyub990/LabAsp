@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Repositories;
+using Repositories.Common;
 
 namespace Persistence.Repositories
 {
-    internal class ContactPostRepository
+    internal class ContactPostRepository : AsyncRepository<ContactPost>, IContactPostRepository
     {
+        public ContactPostRepository(DbContext db)
+            : base(db)
+        {
+            
+        }
     }
 }
